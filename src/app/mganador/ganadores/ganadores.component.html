@@ -1,0 +1,29 @@
+<div class="container">
+
+  <app-player (jugadores)="getJugadores($event)"></app-player>
+  <app-juego (numeroGanador)="getNumeroGanador($event)"></app-juego>
+
+  <h1 class="h1 text-center">GANADORES</h1>
+  <table class="table table-striped">
+    <thead class="">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Numero Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Numero Jugado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of players; let j = index ">
+        <ng-container *ngIf="i.numero == numeroGanador">
+          <th scope="row">{{j}}</th>
+          <td >{{i.numeroId}}</td>
+          <td >{{i.nombre}}</td>
+          <td >{{i.apellido}}</td>
+          <td >{{i.numero}}</td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+</div>
