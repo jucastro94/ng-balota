@@ -10,7 +10,7 @@ const routes: Routes = [
     component: GanadoresComponent
   },
   {
-    path:'',
+    path:'player',
     component: PlayerComponent
   },
   {
